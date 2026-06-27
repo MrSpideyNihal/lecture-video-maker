@@ -1820,11 +1820,9 @@ def main():
 
         server_address = ('127.0.0.1', args.port)
         httpd = HTTPServer(server_address, WebAPIHandler)
-        print(f"
-{C.GREEN}{C.BOLD}🎓 Server started at http://localhost:{args.port}{C.RESET}")
+        print(f"\n{C.GREEN}{C.BOLD}🎓 Server started at http://localhost:{args.port}{C.RESET}")
         print(f"{C.CYAN}Opening web interface in your browser...{C.RESET}")
-        print(f"{C.DIM}Press Ctrl+C to stop the server.{C.RESET}
-")
+        print(f"{C.DIM}Press Ctrl+C to stop the server.{C.RESET}\n")
 
         def open_browser():
             time.sleep(1.0)
@@ -1837,8 +1835,7 @@ def main():
         try:
             httpd.serve_forever()
         except KeyboardInterrupt:
-            print(f"
-{C.YELLOW}Stopping server...{C.RESET}")
+            print(f"\n{C.YELLOW}Stopping server...{C.RESET}")
             httpd.server_close()
             sys.exit(0)
 
